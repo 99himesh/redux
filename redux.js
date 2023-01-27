@@ -3,16 +3,16 @@ const redux= require("redux");
 
 
 //reducer fn
-const counterReducer=(state={counter:5},action)=>{
+const counterReducer=(state={counter:0},action)=>{
     if(action.type=="INCREAMENT"){
           return {
-            counter:state.counter+1,
+            counter:state.counter+2,
 
           };
         }
         if(action.type=="DECREAMENT"){
           return {
-         counter:state.counter-1,
+         counter:state.counter-2,
         
           };
         }
@@ -34,12 +34,4 @@ const store=redux.createStore(counterReducer);
  store.subscribe(counterSubscription)
  //ACTION
  store.dispatch({type:'INCREAMENT'})
- store.dispatch({type:'INCREAMENT'})
- store.dispatch({type:'INCREAMENT'})
- store.dispatch({type:'INCREAMENT'})
- store.dispatch({type:'INCREAMENT'})
-
-
-
-
  store.dispatch({type:'DECREAMENT'})
